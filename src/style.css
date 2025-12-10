@@ -1,0 +1,10 @@
+@import url("observablehq:default.css");
+
+:root {
+  --theme-background: #ffffff;
+  --theme-foreground: #313131;
+  --theme-foreground-focus: #4977AB;
+  --theme-background-alt: #f6f8fb;
+  --theme-foreground-alt: #313131;
+}
+
