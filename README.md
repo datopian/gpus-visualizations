@@ -1,71 +1,68 @@
-# PortalJS Data App Starter
+# GPU Performance & Pricing Data Portal
 
-Data app template for publishing dashboards and visualizations, powered by [ObservableHQ Framework](https://observablehq.com/framework/).
+Interactive data visualization portal for exploring GPU benchmarks, performance comparisons, and market analysis. Built with [Observable Framework](https://observablehq.com/framework/) and [PortalJS](https://www.portaljs.com/).
 
-## Creating dashboards and reports
+## Dashboards
 
-To create dashboards and reports, you have to run your data app locally. Note that your data app is an [Observable Framework](https://observablehq.com/framework/) app.
+### GPU Performance Comparison
+Compare GPU performance across multiple graphics APIs:
+- CUDA, OpenCL, and Vulkan benchmark scores
+- G3Dmark performance rankings
+- Brand and category comparisons
 
-To install the required dependencies, run:
+### Price vs Performance
+Find the best value GPUs:
+- Top 15 best value GPUs ranked by G3Dmark points per dollar
+- Performance and value analysis by price range
+- Brand comparison with GPU counts
 
-```
+### NVIDIA Historical Releases
+Track NVIDIA's GPU release history from 2012-2022:
+- Annual release counts and trends
+- Cumulative releases over time
+- Performance evolution by year
+
+## Data Sources
+
+- **GPU Benchmarks**: [TechPowerUp GPU Database](https://www.techpowerup.com/gpu-specs/), [PassMark](https://www.passmark.com/)
+- **Price Data**: Current market pricing from major retailers
+- **Release History**: NVIDIA official product database
+
+## Getting Started
+
+Install dependencies:
+
+```bash
 npm install
 ```
 
-Then, to start the local preview server, run:
+Start the development server:
 
-```
+```bash
 npm run dev
 ```
 
-Then visit <http://localhost:3000> to preview your app.
+Visit [http://localhost:3000](http://localhost:3000) to view the portal.
 
-For more, see <https://observablehq.com/framework/getting-started>.
+## Project Structure
 
-## Publishing in PortalJS Cloud
-
-Note that your PortalJS Cloud data portal and your data app are different applications.
-
-In order to publish your data app's content to your PortalJS Cloud data portal:
-
-1. Push the content you developed locally to this repo
-2. Navigate to your data app deployment, find the content you want to publish and copy the URL
-3. In the PortalJS Cloud dashboard, head to the visualizations page and publish a new visualization using the previously copied URL as the external URL
-
-Users will then be able to find the visualization in your data portal and navigate to the visualization in your data app.
-
-## Project structure
-
-A typical Framework project looks like this:
-
-```ini
+```
 .
 ├─ src
-│  ├─ components
-│  │  └─ timeline.js           # an importable module
 │  ├─ data
-│  │  ├─ launches.csv.js       # a data loader
-│  │  └─ events.json           # a static data file
-│  ├─ example-dashboard.md     # a page
-│  ├─ example-report.md        # another page
-│  └─ index.md                 # the home page
-├─ .gitignore
-├─ observablehq.config.js      # the app config file
-├─ package.json
-└─ README.md
+│  │  ├─ gpu_benchmarks.csv       # G3Dmark scores, prices, TDP
+│  │  ├─ gpu_api_scores.csv       # CUDA, OpenCL, Vulkan scores
+│  │  └─ nvidia_releases.csv      # Release counts by year
+│  ├─ gpu-performance.md          # API performance dashboard
+│  ├─ price-performance.md        # Value analysis dashboard
+│  ├─ nvidia-releases.md          # Release history dashboard
+│  ├─ index.md                    # Home page
+│  └─ style.css                   # Dashboard styles
+├─ observablehq.config.js         # App configuration
+└─ package.json
 ```
 
-**`src`** - This is the “source root” — where your source files live. Pages go here. Each page is a Markdown file. Observable Framework uses [file-based routing](https://observablehq.com/framework/project-structure#routing), which means that the name of the file controls where the page is served. You can create as many pages as you like. Use folders to organize your pages.
-
-**`src/index.md`** - This is the home page for your app. You can have as many additional pages as you’d like, but you should always have a home page, too.
-
-**`src/data`** - You can put [data loaders](https://observablehq.com/framework/data-loaders) or static data files anywhere in your source root, but we recommend putting them here.
-
-**`src/components`** - You can put shared [JavaScript modules](https://observablehq.com/framework/imports) anywhere in your source root, but we recommend putting them here. This helps you pull code out of Markdown files and into JavaScript modules, making it easier to reuse code across pages, write tests and run linters, and even share code with vanilla web applications.
-
-**`observablehq.config.js`** - This is the [app configuration](https://observablehq.com/framework/config) file, such as the pages and sections in the sidebar navigation, and the app’s title.
-
-## Command reference
+## Commands
 
 | Command         | Description                                 |
 | --------------- | ------------------------------------------- |
