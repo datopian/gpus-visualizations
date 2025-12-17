@@ -1,11 +1,9 @@
 export default {
   title: "GPU Performance & Pricing Data Portal",
   pages: [
-    {name: "Home", path: "/"},
     {name: "GPU Performance", path: "/gpu-performance"},
     {name: "Price vs Performance", path: "/price-performance"},
-    {name: "NVIDIA Releases", path: "/nvidia-releases"},
-    {name: "Cloud Storage Pricing", path: "/cloud-storage"}
+    {name: "NVIDIA Releases", path: "/nvidia-releases"}
   ],
   head: `
   <link rel="icon" href="observable.png" type="image/png" sizes="32x32">
